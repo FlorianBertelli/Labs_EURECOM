@@ -1,0 +1,43 @@
+ %Matlab-Programming
+ 
+list_harmonic_frequency= [] ;
+i=1 ;
+
+
+for name= ["string1.mp3" , "string2.mp3" , "string3.mp3"]
+
+    [x,fs]=audioread(name);
+
+    x = x(:,1);
+    y = fft(x);
+
+    n = length(x);          % number of samples
+    f = (0:n-1)*(fs/n);     % frequency range
+    power = abs(y).^2/n;    % power of the DFT
+
+    figure;
+    plot(f(1:floor(n/2)),power(1:floor(n/2)))
+  
+    xlabel('Frequency')
+    ylabel('Power')
+
+    [a , loc]= findpeaks(power, 'Threshold', 0.1,'NPeaks',1);
+
+    harmonic_frequency = loc * fs/n;
+    
+    list_harmonic_frequency(i) =  harmonic_frequency
+    i = i +1 ;
+end
+
+keySet = [329.63 , 246.94  , 196.00 , 146.83 , 110.00 , 82.41]
+valueSet = [0.15,0.15,0.15,0.08,0.08,0.04]
+
+c = containers.Map (keySet , valueSet)
+
+for frequency = list_harmonic_frequency
+    for key = keySet
+        if ( abs(frequency - key)< c(key))
+            
+        end
+    end
+end
