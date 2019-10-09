@@ -1,6 +1,6 @@
 # Algorithmic Machine Learning
 
-This fold contains 4 project, which are concrete applications of machine learning algorithms, like Neural Network, Convolutional Neural Network,
+This fold contains 4 projects, which are concrete applications of machine learning algorithms, like Neural Network, Convolutional Neural Network,
 Random Forest, XGBOOST, etc... This implies data preprocessing, understanding, model selection, parameter optimization, hyper parameter tuning,
 analyses of the model (how to distribute it on a Cloud, time performance, limitation).
 
